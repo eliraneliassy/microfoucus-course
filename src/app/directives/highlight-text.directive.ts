@@ -1,4 +1,4 @@
-import { Directive, ElementRef, OnInit, Renderer2, Input } from '@angular/core';
+import { Directive, ElementRef, OnInit, Renderer2, Input, HostListener } from '@angular/core';
 
 @Directive({
   selector: '[appHighlightText]'
@@ -6,6 +6,10 @@ import { Directive, ElementRef, OnInit, Renderer2, Input } from '@angular/core';
 export class HighlightTextDirective implements OnInit {
 
   @Input() bgColor: string;
+
+  @HostListener('window:scroll') mouseenter($event) {
+    console.log(event);
+  }
 
 
   constructor(
@@ -16,7 +20,7 @@ export class HighlightTextDirective implements OnInit {
 
   ngOnInit(): void {
     this.renderer.setStyle
-    (this.element.nativeElement, 'background-color', this.bgColor);
+      (this.element.nativeElement, 'background-color', this.bgColor);
   }
 
 

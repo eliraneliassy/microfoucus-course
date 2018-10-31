@@ -13,7 +13,13 @@
     <ng-template #moshe>
       <div>NOT SALE...</div>
     </ng-template>
-    <button class="btn btn-danger" (click)="delete()">
+    <button class="btn btn-danger" (click)="delete()"
+    *ngIf="remove">
       Delete
     </button>
+
+    <button class="btn btn-success" *ngIf="!remove"
+    (click)="addToCart()">Add To Cart</button>
+
+    <button (click)="removeFromList()">REMOVE FROM LIST</button>
   </div>
