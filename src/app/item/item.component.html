@@ -1,9 +1,19 @@
 <div class="item">
     <img src="{{item.imageUrl}}">
-    <div class="description">
+    <div class="description" >
       {{item.description}}
     </div>
     <div class="price">
       {{item.price}}
     </div>
+    <div class="sale" *ngIf="item.price < 500; else moshe"
+    appHighlightText [bgColor]="'green'">
+      SALE!!
+    </div>
+    <ng-template #moshe>
+      <div>NOT SALE...</div>
+    </ng-template>
+    <button class="btn btn-danger" (click)="delete()">
+      Delete
+    </button>
   </div>

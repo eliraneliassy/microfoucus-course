@@ -1,5 +1,5 @@
 <app-item *ngFor="let item of items; let i = index"
- [item]="item"></app-item>
+ [item]="item" (deleteEvent)="onDelete($event)"></app-item>
 
 
 <button class="btn btn-primary" (click)="chagePrice()">

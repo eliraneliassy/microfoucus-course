@@ -10,10 +10,22 @@ import { db } from './data';
 })
 export class AppComponent {
 
+  db = db;
+
   items: any[] = [...db];
 
   chagePrice() {
     this.items[0].price = 80;
+  }
+
+  constructor() {
+    console.log(this.db);
+  }
+
+  onDelete(event) {
+    this.items = this.items.filter(
+      (item: any) =>
+      item._id !== event._id);
   }
 
 
