@@ -7,7 +7,7 @@
       {{item.price}}
     </div>
     <div class="sale" *ngIf="item.price < 500; else moshe"
-    appHighlightText [bgColor]="'green'">
+    appHighlightText [bgColor]="'black'">
       SALE!!
     </div>
     <ng-template #moshe>

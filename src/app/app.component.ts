@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Item } from './item';
 import { db } from './data';
+import { ShoppingCartService } from './services/shopping-cart.service';
 
 
 @Component({
@@ -14,14 +15,13 @@ export class AppComponent {
 
   items: any[] = [...db];
 
-  shoppingCart: any[] = [];
+
+
+  constructor(private shoppingCartService: ShoppingCartService) {
+  }
 
   chagePrice() {
     this.items[0].price = 80;
-  }
-
-  constructor() {
-    console.log(this.db);
   }
 
   onDelete(event) {
@@ -31,23 +31,15 @@ export class AppComponent {
   }
 
   addToCart(item) {
-    if (!this.itemInShoppingCart(item)) {
-      this.shoppingCart.push(item);
-      console.log(this.shoppingCart);
-    }
-
+    this.shoppingCartService.addToCart(item);
   }
 
   deleteFromCart(item) {
-    const index = this.shoppingCart.indexOf(item);
-    if (index > -1) {
-      this.shoppingCart.splice(index, 1);
-      console.log(this.shoppingCart);
-    }
+    this.shoppingCartService.removeFromCart(item);
   }
 
   itemInShoppingCart(item) {
-    return this.shoppingCart.indexOf(item) > -1;
+    return this.shoppingCartService.itemInCart(item);
   }
 
   revmoveFromList(item) {

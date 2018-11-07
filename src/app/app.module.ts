@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { ItemComponent } from './item/item.component';
 import { FormsModule } from '@angular/forms';
 import { HighlightTextDirective } from './directives/highlight-text.directive';
+import { CustomDirective } from './directives/custom.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ItemComponent,
-    HighlightTextDirective
+    HighlightTextDirective,
+    CustomDirective
   ],
   imports: [
     BrowserModule,
