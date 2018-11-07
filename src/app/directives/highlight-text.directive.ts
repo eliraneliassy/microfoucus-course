@@ -8,7 +8,7 @@ export class HighlightTextDirective implements OnInit {
   @Input() bgColor: string;
 
   @HostListener('window:scroll') mouseenter($event) {
-    console.log(event);
+
   }
 
 
