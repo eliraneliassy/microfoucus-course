@@ -1,14 +1,23 @@
-<app-item *ngFor="let item of items; let i = index"
- [item]="item"
- (addToCartEvent)=addToCart($event)
- (deleteEvent)="deleteFromCart($event)"
- [remove]="itemInShoppingCart(item)"
- (removeFromListEvent)="revmoveFromList($event)"></app-item>
+<div appInfinteScroll (bottomReached)="getNextPage()" [isloading]="loading">
+  <div class="loading" *ngIf="loading">
+    <img src="https://loading.io/spinners/typing/lg.-text-entering-comment-loader.gif">
+  </div>
+
+  <div class="pagination">
+    <span (click)="changePage(1)">1</span>
+    <span (click)="changePage(2)">2</span>
+    <span (click)="changePage(3)">3</span>
+
+  </div>
+
+  <app-item *ngFor="let item of items; let i = index" [item]="item" (addToCartEvent)=addToCart($event) (deleteEvent)="deleteFromCart($event)"
+    [remove]="itemInShoppingCart(item)" (removeFromListEvent)="revmoveFromList($event)"></app-item>
 
 
-<button class="btn btn-primary" (click)="chagePrice()">
-  Change Price
-</button>
+  <button class="btn btn-primary" (click)="chagePrice()">
+    Change Price
+  </button>
 
+</div>
 
 <router-outlet></router-outlet>
