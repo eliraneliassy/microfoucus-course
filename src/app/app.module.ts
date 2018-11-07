@@ -10,6 +10,13 @@ import { CustomDirective } from './directives/custom.directive';
 import { ShoppingCartService } from './services/shopping-cart.service';
 import { HttpClientModule } from '@angular/common/http';
 import { InfinteScrollDirective } from './directives/infinte-scroll.directive';
+import { DiscountPipe } from './discount.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { HeaderComponent } from './components/header/header.component';
+import { FeedComponent } from './components/feed/feed.component';
+
+
 
 @NgModule({
   declarations: [
@@ -17,13 +24,18 @@ import { InfinteScrollDirective } from './directives/infinte-scroll.directive';
     ItemComponent,
     HighlightTextDirective,
     CustomDirective,
-    InfinteScrollDirective
+    InfinteScrollDirective,
+    DiscountPipe,
+    HeaderComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

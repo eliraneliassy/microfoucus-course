@@ -3,8 +3,15 @@
     <div class="description" >
       {{item.description}}
     </div>
-    <div class="price">
-      {{item.price}}
+    <div class="price" [ngClass]="{'line': item.price > 500}">
+      {{item.price | currency}} 
+    </div>
+    <div class="new-price">
+        {{item.price | discount | currency }}
+    </div>
+
+    <div class="date">
+      {{item.purchaseDate | date:'fullDate'}}
     </div>
     <div class="sale" *ngIf="item.price < 500; else moshe"
     appHighlightText [bgColor]="'black'">

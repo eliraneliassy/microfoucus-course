@@ -1,9 +1,15 @@
-app-item /deep/ div{
-    color: black;
+app-item /deep/ div {
+  color: black;
+  
+  margin-top:20px;
 }
 
-.pagination{
-    span{
-        margin-right: 10px;
-    }
+.pagination {
+  span {
+    margin-right: 10px;
+  }
+}
+
+.loading {
+  
 }

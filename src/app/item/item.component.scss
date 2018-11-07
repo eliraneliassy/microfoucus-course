@@ -1,6 +1,16 @@
 .item{
     border: 2px solid fuchsia;
     text-align: center;
+
+    img{
+        max-width: 200px;
+        max-height: 200px;
+    }
+
+}
+
+.line{
+    text-decoration: line-through;
 }
 
 .sale {
