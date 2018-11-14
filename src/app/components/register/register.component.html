@@ -1,0 +1,53 @@
+<div class="text-center">
+
+    <form class="form-signin" [formGroup]="form">
+      <h1 class="h3 mb-3 font-weight-normal">Please Register</h1>
+
+      <div class="form-group">
+          <label for="inputEmail">Name</label>
+          <input type="text" id="name" class="form-control" placeholder="Please enter your name"
+          formControlName="name"
+            >
+  
+          <div class="errors">
+            <div *ngIf="false">Email
+              is required</div>
+            <div *ngIf="false">Email
+              is not a valid email</div>
+          </div>
+        </div>
+  
+      
+        <div class="form-group">
+          <label for="inputEmail">Email address</label>
+          <input type="text" id="inputEmail" class="form-control" placeholder="Please enter here Email address"
+          formControlName="email">
+  
+          <div class="errors">
+            <div *ngIf="false">Email
+              is required</div>
+            <div *ngIf="false">Email
+              is not a valid email</div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="inputPassword">Password</label>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Password"
+          formControlName="password">
+        </div>
+
+        <div formArrayName="friends">
+          <button (click)="addFriend()">+</button>
+          <div *ngFor="let friend of form.controls['friends'].controls; let i = index">
+            <input [formControlName]="i">
+          </div>
+        </div>
+  
+  
+      <button class="btn btn-lg btn-primary btn-block" type="submit"
+      (click)="onSubmit()"
+      >Sign in</button>
+      <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+    </form>
+  </div>

@@ -1,10 +1,11 @@
+import { AuthGuard } from './services/auth.guard';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ItemComponent } from './item/item.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HighlightTextDirective } from './directives/highlight-text.directive';
 import { CustomDirective } from './directives/custom.directive';
 import { ShoppingCartService } from './services/shopping-cart.service';
@@ -17,6 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FeedComponent } from './components/feed/feed.component';
 import { LoginComponent } from './components/login/login.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 
@@ -31,7 +33,8 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
     HeaderComponent,
     FeedComponent,
     LoginComponent,
-    ShoppingCartComponent
+    ShoppingCartComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -39,9 +42,10 @@ import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MatToolbarModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
