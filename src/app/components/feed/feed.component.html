@@ -1,7 +1,10 @@
-<div appInfinteScroll (bottomReached)="getNextPage()" [isloading]="loading" class="row">
+<div appInfinteScroll 
+(bottomReached)="getNextPage()"
+ [isloading]="loading" class="row">
 
 
-    <app-item class="col-xs-12 col-sm-6 col-md-4" *ngFor="let item of items; let i = index" [item]="item"
+    <app-item class="col-xs-12 col-sm-6 col-md-4" 
+    *ngFor="let item of items; let i = index" [item]="item"
       (addToCartEvent)=addToCart($event) (deleteEvent)="deleteFromCart($event)" [remove]="itemInShoppingCart(item)"
       (removeFromListEvent)="revmoveFromList($event)"></app-item>
   

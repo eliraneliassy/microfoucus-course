@@ -66,11 +66,11 @@ export class FeedComponent implements OnInit {
     this.loading = true;
     this.page++;
     this.itemsDataService.getItems(this.page)
-      .subscribe((items: any[]) => {
-        if (items.length === 0) {
+      .subscribe((newItemsFromServer: any[]) => {
+        if (newItemsFromServer.length === 0) {
           return;
         }
-        this.items = [...this.items, ...items];
+        this.items = [...this.items, ...newItemsFromServer];
         this.loading = false;
       });
   }

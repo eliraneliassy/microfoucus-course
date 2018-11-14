@@ -15,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HeaderComponent } from './components/header/header.component';
 import { FeedComponent } from './components/feed/feed.component';
+import { LoginComponent } from './components/login/login.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 
 
@@ -27,7 +29,9 @@ import { FeedComponent } from './components/feed/feed.component';
     InfinteScrollDirective,
     DiscountPipe,
     HeaderComponent,
-    FeedComponent
+    FeedComponent,
+    LoginComponent,
+    ShoppingCartComponent
   ],
   imports: [
     BrowserModule,
